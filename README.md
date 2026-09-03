@@ -1,12 +1,18 @@
 # FamGateway Python SDK
 
 [![PyPI version](https://img.shields.io/pypi/v/famgateway.svg?color=blue)](https://pypi.org/project/famgateway/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/famgateway?color=blue)](https://pypi.org/project/famgateway/)
 [![Python versions](https://img.shields.io/pypi/pyversions/famgateway.svg)](https://pypi.org/project/famgateway/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Govt MSME Registered](https://img.shields.io/badge/MSME-UDYAM--BR--28--0050000-blue)](https://famgateway.in)
 [![GitHub Stars](https://img.shields.io/github/stars/aryanispe/famgateway-python?style=social)](https://github.com/aryanispe/famgateway-python)
 
 The official Python client library for **[FamGateway](https://famgateway.in)** — 100% Free, Zero-Fee Peer-to-Peer UPI Payment Gateway for Indian Developers and Businesses.
+
+- 📦 **PyPI Official Package:** [https://pypi.org/project/famgateway/](https://pypi.org/project/famgateway/)
+- 🌐 **Official Website:** [https://famgateway.in](https://famgateway.in)
+- 📖 **API Documentation:** [https://famgateway.in/docs.php](https://famgateway.in/docs.php)
+- 🏛️ **Govt. MSME Registration:** `UDYAM-BR-28-0050000` (ARYANISPE)
 
 ---
 
@@ -22,8 +28,16 @@ The official Python client library for **[FamGateway](https://famgateway.in)** �
 
 ## Installation
 
+Install the official package from [PyPI](https://pypi.org/project/famgateway/):
+
 ```bash
 pip install famgateway
+```
+
+Or upgrade to the latest release:
+
+```bash
+pip install --upgrade famgateway
 ```
 
 ---
