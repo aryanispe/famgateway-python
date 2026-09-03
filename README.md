@@ -70,6 +70,39 @@ if status.is_paid:
 
 ---
 
+## Rate Limits & Polling Guidelines
+
+To maintain 99.99% payment processing reliability and prevent bank spam:
+
+- **Order Creation (`create_order`):** Unlimited for verified merchants.
+- **Status Polling (`get_status`):** Poll **every 3 to 5 seconds** per active order.
+  - ⚠️ **Do not poll faster than 3 seconds:** FamPay UPI bank emails arrive in 2–4 seconds. Polling faster than 3 seconds triggers the automatic 5-second merchant protection lock.
+  - **Expiry:** Orders expire in 5 minutes. Stop polling once `status.is_expired` is True.
+  - **High-Volume Apps:** For high-volume web apps, use our **Instant HMAC-SHA256 Webhooks** instead of polling.
+
+### Recommended Python Polling Loop:
+
+```python
+import time
+
+order = fg.create_order(amount=100.0)
+print(f"Awaiting payment for Order: {order.order_id}...")
+
+# Poll every 3 seconds (up to 5 minutes / 100 attempts)
+for _ in range(100):
+    time.sleep(3)  # ✅ Recommended 3-5 second polling interval
+    status = fg.get_status(order.order_id)
+    
+    if status.is_paid:
+        print(f"Payment Captured! UTR: {status.utr}, Payer: {status.sender_name}")
+        break
+    elif status.is_expired:
+        print("Order expired without payment.")
+        break
+```
+
+---
+
 ## Telegram Bot Integration Example
 
 Use `famgateway` to collect payments directly inside Telegram without any website redirect:
