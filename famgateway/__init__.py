@@ -14,7 +14,7 @@ from .exceptions import (
 )
 from .models import OrderResponse, OrderStatus
 
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 __author__ = "ARYANISPE"
 __all__ = [
     "FamGateway",

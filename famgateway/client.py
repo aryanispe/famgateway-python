@@ -47,7 +47,7 @@ class FamGateway:
         self.timeout = timeout
         self.session = requests.Session()
         self.session.headers.update({
-            "User-Agent": "FamGateway-Python-SDK/1.0.3",
+            "User-Agent": "FamGateway-Python-SDK/1.0.4",
             "Accept": "application/json",
         })
 

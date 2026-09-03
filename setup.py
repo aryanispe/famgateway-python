@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="famgateway",
-    version="1.0.3",
+    version="1.0.4",
     author="ARYANISPE",
     author_email="support@famgateway.in",
     description="Official Python SDK for FamGateway UPI Payment Gateway",
